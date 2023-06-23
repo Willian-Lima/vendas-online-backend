@@ -4,8 +4,9 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { StateModule } from './state/state.module';
 import { CityModule } from './city/city.module';
-import { AddresModule } from './addres/addres.module';
 import { CacheModule } from './cache/cache.module';
+import { AddressController } from './address/address.controller';
+import { AddressModule } from './address/address.module';
 
 @Module({
   imports: [
@@ -26,8 +27,8 @@ import { CacheModule } from './cache/cache.module';
     UserModule,
     StateModule,
     CityModule,
-    AddresModule,
     CacheModule,
+    AddressModule,
   ],
   controllers: [],
   providers: [],
