@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from '@n
 import { CreateUserDto } from './dtos/createUser.dto';
 import { UserService } from './user.service';
 import { UserEntity } from './entities/user.entity';
-import { returnUserDto } from './dtos/returnUser.dto';
+import { ReturnUserDto } from './dtos/returnUser.dto';
 
 @Controller('user')
 export class UserController {
@@ -16,12 +16,12 @@ export class UserController {
 
   // Recupera os usuários que estão salvos no no DB do user.service (users)
   @Get()
-  async getAllUser(): Promise<returnUserDto[]> {
-    return (await this.userService.getAllUser()).map((UserEntity) => new returnUserDto(UserEntity));
+  async getAllUser(): Promise<ReturnUserDto[]> {
+    return (await this.userService.getAllUser()).map((UserEntity) => new ReturnUserDto(UserEntity));
   }
 
   @Get('/:userId')
-  async getUserById(@Param('userId') userId: number): Promise<returnUserDto> {
-    return new returnUserDto(await this.userService.getUserByUsingRelations(userId));
+  async getUserById(@Param('userId') userId: number): Promise<ReturnUserDto> {
+    return new ReturnUserDto(await this.userService.getUserByUsingRelations(userId));
   }
 }
