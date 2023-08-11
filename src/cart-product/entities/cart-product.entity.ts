@@ -1,6 +1,5 @@
-import { CartEntity } from 'src/cart/entities/cart.entity';
-import { CategoryEntity } from 'src/category/entities/category.entity';
-import { ProductEntity } from 'src/product/entities/product.entity';
+import { CartEntity } from '../../cart/entities/cart.entity';
+import { ProductEntity } from '../../product/entities/product.entity';
 import {
   PrimaryGeneratedColumn,
   Column,
