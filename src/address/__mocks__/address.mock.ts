@@ -7,7 +7,7 @@ export const addressMock: AddressEntity = {
   complement: 'asdsadwfa',
   numberAddress: 654,
   cep: '2514541',
-  cityId: 54,
+  cityId: 544,
   createdAt: new Date(),
   updatedAt: new Date(),
 };
