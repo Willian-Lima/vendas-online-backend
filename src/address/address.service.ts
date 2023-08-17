@@ -27,6 +27,10 @@ export class AddressService {
     });
   }
 
+  /*
+   * Esta função busca no banco de dados todos os esdereços encontrados no
+   * banco de dados que pertencem ao ID de usuário passado retornando um array de AddressEntity
+   */
   async findAddressByUserId(userId: number): Promise<AddressEntity[]> {
     const addresses = await this.addressRepository.find({
       where: {
@@ -40,7 +44,7 @@ export class AddressService {
     });
 
     if (!addresses || addresses.length === 0) {
-      throw new NotFoundException(`Address not found dor userId: ${userId}`);
+      throw new NotFoundException(`Address not found for userId: ${userId}`);
     }
 
     return addresses;
